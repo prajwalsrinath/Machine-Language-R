@@ -23,7 +23,7 @@ min(crime_test$Beat)
 
 nrow(crime_test[ which(crime_test$Arrest=='TRUE'),])
 
-#	How many observations have a LocationDescription value of ALLEY?
+#How many observations have a LocationDescription value of ALLEY?
 
 nrow(crime_test[ which(crime_test$LocationDescription=='ALLEY'),])
 
@@ -40,7 +40,7 @@ summary(crime_test)
 crime_test$Month = months(DateConvert) 
 crime_test$Weekday = weekdays(DateConvert)
 
-#	On which weekday did the most motor vehicle thefts occur?
+#On which weekday did the most motor vehicle thefts occur?
   
 table(crime_test$Weekday)
 
@@ -52,12 +52,12 @@ max(crime_test$Month[table(crime_test$Month)])
 
 hist(crime_test$DateConvert, breaks=100)
 
-#	In general, does it look like crime increases or decreases from 2002 - 2012?
-# Decrease
-#	In general, does it look like crime increases or decreases from 2005 - 2008?
-# Decrease
-#	In general, does it look like crime increases or decreases from 2009 - 2011?
-# Increase  
+#In general, does it look like crime increases or decreases from 2002 - 2012?
+#Decrease
+#In general, does it look like crime increases or decreases from 2005 - 2008?
+#Decrease
+#In general, does it look like crime increases or decreases from 2009 - 2011?
+#Increase  
 
 #Create a boxplot of the variable "Date", sorted by the variable "Arrest" 
 
@@ -98,9 +98,9 @@ TopLocations = c("STREET", "PARKING LOT/GARAGE(NON.RESID.)", "ALLEY", "GAS STATI
 Top5 = subset(crime_test, LocationDescription %in% TopLocations)
 View(Top5)
 
-#	On which day of the week do the most motor vehicle thefts at gas stations happen?
+#On which day of the week do the most motor vehicle thefts at gas stations happen?
 
 table(crime_test$LocationDescription, crime_test$Weekday) #saturday
 
-#	On which day of the week do the fewest motor vehicle thefts in residential driveways happen?
+#On which day of the week do the fewest motor vehicle thefts in residential driveways happen?
 
