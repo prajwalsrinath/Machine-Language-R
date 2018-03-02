@@ -100,7 +100,8 @@ View(Top5)
 
 #On which day of the week do the most motor vehicle thefts at gas stations happen?
 
-table(crime_test$LocationDescription, crime_test$Weekday) #saturday
+table(Top5$LocationDescription, Top5$Weekday) 
 
 #On which day of the week do the fewest motor vehicle thefts in residential driveways happen?
 
+table(Top5$LocationDescription, Top5$Weekday)
