@@ -1,5 +1,3 @@
-nrow(census)
-
 census$over50k=ifelse(census$over50k=='>50K',1,0)
 census$over50k=as.factor(census$over50k)
 census$workclass=as.factor(census$workclass)
@@ -11,7 +9,7 @@ census$sex =as.factor(census$sex )
 census$race =as.factor(census$race )
 census$nativecountry =as.factor(census$nativecountry )
 unique(census$over50k)
-str(census)
+
 sapply(census, function(x) sum(is.na(x)))
 
 library(glmnet)
@@ -28,8 +26,6 @@ test_census  = subset(census, spl==F)
 
 logistic_census=glm(over50k~.,data=train_census,family="binomial")
 summary(logistic_census)
-
-
 pred=predict(logistic_census,newdata=test_census,type="response")
 pred_class=ifelse(pred>=0.5,1,0)
 table(test_census$over50k,pred_class)
@@ -63,7 +59,6 @@ AUC #90.61
 
 library(rpart)
 library(rpart.plot)
-
 tree_census=rpart(over50k~.,data=train_census,method="class")
 prp(tree_census)
 
@@ -108,7 +103,6 @@ AUC  #84.70
 #Before building a random forest model, we'll down-sample our training set
 
 library("randomForest")
-
 set.seed(1)
 
 trainSmall_census = train_census[sample(nrow(train_census), 2000), ]
@@ -116,8 +110,6 @@ trainSmall_census = train_census[sample(nrow(train_census), 2000), ]
 #Make sure NA not present in the Dataframe
 
 library(dplyr)
-
-
 set.seed(1)
 rf_census=randomForest(over50k~.-nativecountry ,data=trainSmall_census)
 rf_census
@@ -161,7 +153,6 @@ dotchart(vusorted$x, names(rf_census$forest$xlevels[vusorted$ix]))
 #age
 
 
-
 #Let us select the cp parameter for our CART model using k-fold cross validation, 
 #with k = 10 folds. Do this by using the train function. Set the seed beforehand to 2. 
 #Test cp values from 0.002 to 0.1 in 0.002 increments, by using the following command:
@@ -175,7 +166,15 @@ train(over50k~.,data=train_census,method="rpart",trControl=numfolds,tuneGrid=cpg
 #Fit a CART model to the training data using this value of cp. 
 #What is the prediction accuracy on the test set?
 
-pred_cart_CART=predict(tree_census,newdata=test_census,cp=0.002,type="class")
+pred_CART=predict(tree_census,newdata=test_census,cp=0.002,type="class")
 table(test_census$over50k,pred_cart_CART)
 accuracy=(9243+1596)/nrow(test_census)
 accuracy
+       
+tree_final=rpart(over50k~.,cp=0.002,data=train)
+prp(tree_final)
+
+pred_test=predict(tree_final,newdata=test,type="class")
+table(test$over50k,pred_test)
+accuracy=(22966+4552)/nrow(test)
+#86.05%   
