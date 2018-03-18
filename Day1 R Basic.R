@@ -6,7 +6,7 @@ rm(list=ls())# delete files in R history
 #install & Load a package
 install.packages("ggplot2")
 library("ggplot2")
-
+installed.packages()  #to see all the installed packages
 #***************basic Operations in R*********************
 #arithmetic           ---   =,<-, +, -, *,/,%%,^ 
 #relational           ---   >=, <=, ==,!= 
