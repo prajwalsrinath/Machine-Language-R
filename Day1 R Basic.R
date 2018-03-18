@@ -13,6 +13,9 @@ installed.packages()  #to see all the installed packages
 #logical              ---   & ,| 
 #create a sequence    ---   :,seq #seq(2,20,2)
 
+x=2   #Assign 2 to x
+x<-2  #Assign 2 to x,= and <- do the same
+
 #Built-in Functions 
 #log (x),log(x,n),sqrt(x),factorial(x),floor(x),ceiling(x),
 #round(x,digits=0),abs(x),runif(n) &
