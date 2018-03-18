@@ -22,7 +22,7 @@ x<-2  #Assign 2 to x,= and <- do the same
 
 #data types in R
 
-#Vectors 
+#Vectors : collection of Element of Same DataType
 x=c(1,2,3,4,2,1,1)
 print(x)
 course_name=c("Zero2","Hero")
