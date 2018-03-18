@@ -40,9 +40,3 @@ max(x)
 min(x)
 mean(x)
 median(x)
-
-
-
-
-
-
