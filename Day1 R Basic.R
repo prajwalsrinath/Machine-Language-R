@@ -43,3 +43,8 @@ max(x)
 min(x)
 mean(x)
 median(x)
+
+#histogram
+hist(variablename,col="blue")
+runif(n)  #give n Number of Random Number between 0 and 1
+#Boxplot
