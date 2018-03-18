@@ -28,7 +28,7 @@ print(x)
 course_name=c("Zero2","Hero")
 print(course_name)
 class(course_name)#to check the dtype of an object
-temp=c(1,234,"Bangalore")
+temp=c(1,234,"Bangalore") #Numeric values will be converted to string and create the vector temp Vice versa not possible
 print(temp)
 class(temp)
 temp[4] #indexing in R, starts from 1
