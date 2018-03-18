@@ -11,7 +11,7 @@ installed.packages()  #to see all the installed packages
 #arithmetic           ---   =,<-, +, -, *,/,%%,^ 
 #relational           ---   >=, <=, ==,!= 
 #logical              ---   & ,| 
-#create a sequence    ---   :,seq #seq(2,20,2)
+#create a sequence    ---   :(1:10  #print from 1 to 10),seq #seq(2,20,2)
 
 x=2   #Assign 2 to x
 x<-2  #Assign 2 to x,= and <- do the same
@@ -22,7 +22,7 @@ x<-2  #Assign 2 to x,= and <- do the same
 
 #data types in R
 
-#Vectors
+#Vectors 
 x=c(1,2,3,4,2,1,1)
 print(x)
 course_name=c("Zero2","Hero")
