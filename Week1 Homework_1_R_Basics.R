@@ -143,6 +143,8 @@ x=rnorm(10000)
 #draw a histogram for this. Try to play around with the breaks parameter
 hist(x,break=40)
 #add color, xlabel, ylabel and title label to the histogram
+hist(x,breaks=40,col="blue",
+     xlab = "X Axis",ylab = "Count or frequesny",main = "My First Histogram")
 #how does the histogram look. Does it ahve a right tail (right skewed),
 #left tail(left skewed). How will the mean & median vary in a histogram with
 #left right tail. Mean>median in a right skewed histogram?
@@ -153,6 +155,9 @@ hist(x,break=40)
 #of the numbers.. (find manually and using the fuction sd() and var())
 #what is the formulae for sd. How does the sd vary for a population and 
 #a sample? 
+
+rand_sd=sd(x)
+var=(rand_sd)^2
 #make sure what sd you find manually in R matches with your excel output..
 
 #do the excel assignment
@@ -160,11 +165,23 @@ hist(x,break=40)
 
 #Boxplot--
 #create a vector with 1000 random numbers. Draw a box plot of this using R.
+
+x_rand=c(runif(1000))
+
 #find the Q1,Q2 & Q3 for this vector. Find the IQR.
+
+q1=quantile(x_rand,.25)
+q2=quantile(x_rand,.50)
+q3=quantile(x_rand,.75)
+IQR=q3-q1
+
 #calcualte the conditions for a point to be called outleir for this dataset
 #
 # intentionally add an outlier to the above vector.. (how will you add a value
 #to an existing vector?? google..)# then draw boxplot again.
+x_rand=c(runif(1000),200,-20)
+boxplot(x_rand)
+
 #see if the values appears as a outlier in the plot.
 #Play around with these.
 
