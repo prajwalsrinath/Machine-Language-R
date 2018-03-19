@@ -11,6 +11,8 @@
 #1--SETTING wORKING DIRECTORY##################bool#####
 #TASK ----make that folder as your working directory
 
+getwd()
+setwd("C://Users//abhic6//Documents")
 
 #2--VARIABLE ASSIGNMENT#######################
 #A variable allows you to store a value (e.g. 4) or an object
