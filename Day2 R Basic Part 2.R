@@ -7,8 +7,12 @@ x=matrix(1:10,nrow = 5,byrow = T)#by default byrow=F
 print(x)
 
 x2=matrix(1:10,nrow=5,ncol = 4) 
-
 print(x2)
+
+#Multiply 2 with Each Element in List same applicable to matrix also for any arithmatic operation
+x=c(23,25,36)
+x*2
+
 #indexing in 2D
 x2[2,1] # 2nd row and 1st col
 #to get all rows in 1st col
