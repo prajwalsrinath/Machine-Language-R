@@ -85,6 +85,17 @@ setwd("C://Users//abhic6//Documents")
 #titles <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 #Construct a matrix with 3 rows, where each row represents a movie.
 #Name the resulting matrix star_wars_matrix.
+
+new_hope <- c(460.998, 314.4)
+empire_strikes <- c(290.475, 247.900)
+return_jedi <- c(309.306, 165.8)
+region <- c("US", "non-US")
+titles <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
+
+star_wars_matrix=matrix(c(new_hope,empire_strikes,return_jedi),nrow=3,byrow=T)
+star_wars_matrix
+
+
 #add the names of the movies for the rows.use rownames()function.
 #add region of collection. use colnames() function.
 
