@@ -95,13 +95,17 @@ titles <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 star_wars_matrix=matrix(c(new_hope,empire_strikes,return_jedi),nrow=3,byrow=T)
 star_wars_matrix
 
-
 #add the names of the movies for the rows.use rownames()function.
+rownames(star_wars_matrix)=c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
+
 #add region of collection. use colnames() function.
+colnames(star_wars_matrix) = c("US", "non-US")
 
 #calculate the total box office revenue for the three Star Wars movies
-#google for a function to get the rowsum of a matrix.
+colSums(star_wars_matrix)
 
+#google for a function to get the rowsum of a matrix.
+rowSums(star_wars_matrix)
 
 #7--Indexing in matrix
 #Similar to vectors, you can use the square brackets [ ]
@@ -120,11 +124,14 @@ star_wars_matrix
 #store the result as non_us_all
 #Use mean() on non_us_all to calculate 
 #the average non-US revenue for all movies. 
+non_us_all=star_wars_matrix[,2]
+mean(non_us_all)
 
 #This time, select the non-US revenue for the first
 #two movies in all_wars_matrix. Store the result as non_us_some
 #Use mean() again to print out the average of the values in non_us_some
-
+non_us_some=star_wars_matrix[c(1:2),2]
+mean(non_us_some)
 
 #Histogram
 #generate 10000 random numbers (use rnorm(n) to generate n random number)
