@@ -139,7 +139,9 @@ mean(non_us_some)
 
 #Histogram
 #generate 10000 random numbers (use rnorm(n) to generate n random number)
+x=rnorm(10000)
 #draw a histogram for this. Try to play around with the breaks parameter
+hist(x,break=40)
 #add color, xlabel, ylabel and title label to the histogram
 #how does the histogram look. Does it ahve a right tail (right skewed),
 #left tail(left skewed). How will the mean & median vary in a histogram with
