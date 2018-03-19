@@ -39,10 +39,15 @@ setwd("C://Users//abhic6//Documents")
 #assign the losses and wins to it.
 #week2-On Monday you lost $24, Tuesday you lost $50, Wednesday you won $100,
 #Thursday you lost $350, Friday you won $10
-#a) on which day did you make the most money( taking both weeks into consideration)
-#b) What is your overall gain/loss at the end of 2 weeks?
 week1=c(140,-50,20,120,240)
 week2=c(-24,-50,100,-350,10)
+week=week1+week2
+names(week)=c("Monday","Tuesday","wenesday","Thursday","friday")
+
+#a) on which day did you make the most money( taking both weeks into consideration)
+week[week==max(week)]
+
+#b) What is your overall gain/loss at the end of 2 weeks?
 
 
 #5--COMPARISON OPERATORS IN R
