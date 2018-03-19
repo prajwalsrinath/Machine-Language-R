@@ -49,6 +49,8 @@ week[week==max(week)]
 
 #b) What is your overall gain/loss at the end of 2 weeks?
 
+overall_gain=sum(week)
+overall_gain
 
 #5--COMPARISON OPERATORS IN R
 #
@@ -139,7 +141,7 @@ mean(non_us_all)
 #This time, select the non-US revenue for the first
 #two movies in all_wars_matrix. Store the result as non_us_some
 #Use mean() again to print out the average of the values in non_us_some
-non_us_some=star_wars_matrix[c(1:2),2]
+non_us_some=star_wars_matrix[1:2,2]
 mean(non_us_some)
 
 #Histogram
@@ -171,7 +173,7 @@ var=(rand_sd)^2
 #Boxplot--
 #create a vector with 1000 random numbers. Draw a box plot of this using R.
 
-x_rand=c(runif(1000))
+x_rand=rnrom(1000)
 
 #find the Q1,Q2 & Q3 for this vector. Find the IQR.
 
@@ -184,8 +186,8 @@ IQR=q3-q1
 #
 # intentionally add an outlier to the above vector.. (how will you add a value
 #to an existing vector?? google..)# then draw boxplot again.
-x_rand=c(runif(1000),200,-20)
-boxplot(x_rand)
+with_added_outlier=append(x_rand,10)
+boxplot(with_added_outlier)
 
 #see if the values appears as a outlier in the plot.
 #Play around with these.
