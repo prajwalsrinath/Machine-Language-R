@@ -41,8 +41,8 @@ setwd("C://Users//abhic6//Documents")
 #Thursday you lost $350, Friday you won $10
 #a) on which day did you make the most money( taking both weeks into consideration)
 #b) What is your overall gain/loss at the end of 2 weeks?
-
-
+week1=c(140,-50,20,120,240)
+week2=c(-24,-50,100,-350,10)
 
 
 #5--COMPARISON OPERATORS IN R
@@ -59,8 +59,12 @@ setwd("C://Users//abhic6//Documents")
 #these values are for year 2013,2014,2015,2016 & 2017. assign the year as names
 #to the vector. Use names function for this.
 
+gdp_growth=c(6.8,6.6,6.4,5.9,7.2)
+names(gdp_growth) = c(2013,2014,2015,2016,2017)
+
 #filter out only those year where the gdp growth was >6.5. use vector indexing for this.
 
+gdp_growth[gdp_growth>6.5]
 
 #6--MATRIX
 #a matrix is a collection of elements of the same data type 
