@@ -2,10 +2,12 @@ random_num=runif(5000)
 hist(random_num,breaks=40,col="blue",
      xlab = "X Axis",ylab = "Count or frequesny",main = "My First Histogram")
 
-#matrix
+#matrix is similar to vector but 2 dimesion
 x=matrix(1:10,nrow = 5,byrow = T)#by default byrow=F
 print(x)
-x2=matrix(1:10,nrow=5,ncol = 4)
+
+x2=matrix(1:10,nrow=5,ncol = 4) 
+
 print(x2)
 #indexing in 2D
 x2[2,1] # 2nd row and 1st col
@@ -50,9 +52,3 @@ x_new
 x
 age=c(5,10,15,32,20)
 sd(age)
-
-
-
-
-
-
