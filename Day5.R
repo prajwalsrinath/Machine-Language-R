@@ -98,6 +98,22 @@ table(mtcars$gear)
 prop.table(table(mtcars$gear))#if you want percentages
 dim(mtcars)#dimenssion
 nrow(mtcars);ncol(mtcars)
+       
+#**************************************************************************#
+x=401
+
+if(x%2==0)
+  print("The Number is Even")
+else
+  print("The Number is odd")
+ 
+x=0;
+while(x<4)
+{
+  print(x)
+  x=x+1
+}
+       
 #***************************************ggplot2*****************************
 #*************** GRAMMAR OF GRAPHICS****************************************
 str(mtcars)
