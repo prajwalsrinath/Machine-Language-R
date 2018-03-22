@@ -36,6 +36,10 @@ x=c(2,11,22,33,44)
 x[3:5]
 x[c(3,4,5)]
 x[-1]#all but the first index
+
+#Creating Vector using Sequence Function
+myvector=c(seq(0,100,2))
+myvector
 #Important vector functions
 sum(x)
 length(x)
