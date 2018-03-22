@@ -11,6 +11,8 @@
 #1--SETTING wORKING DIRECTORY##################bool#####
 #TASK ----make that folder as your working directory
 
+ls()  #List all the variables that has been created in the current R session
+
 getwd()
 setwd("C://Users//abhic6//Documents")
 
