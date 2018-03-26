@@ -6,6 +6,9 @@ climate_change$rowid=runif(308)
 str(climate_change)
 summary(climate_change)
 
+climate_change_train=subset(climate_change,rowid<=0.7)
+climate_change_tets=subset(climate_change,rowid>0.7)
+
 #Compute the correlations between all the variables in the dataset except Date & Month. 
 cor(subset(climate_change, select = c(-Year,-Month)))
 
