@@ -6,7 +6,6 @@ str(climate_change)
 summary(climate_change)
 
 #Compute the correlations between all the variables in the dataset except Date & Month. 
-
 cor(subset(climate_change, select = c(-Year,-Month)))
 
 #Which of the following independent variables is N2O highly correlated with (absolute 
@@ -20,7 +19,6 @@ cor(subset(climate_change, select = c(-Year,-Month)))
 pred=mean(climate_change$Temp)
 
 #SST/TSS
-
 sum((climate_change$Temp--pred)^2)
 
 
