@@ -6,6 +6,9 @@ climate_change$rowid=runif(308)
 str(climate_change)
 summary(climate_change)
 
+#Check if any NA Exists
+sum(is.na(climate_change))
+
 climate_change_train=subset(climate_change,rowid<=0.7)
 climate_change_test=subset(climate_change,rowid>0.7)
 
