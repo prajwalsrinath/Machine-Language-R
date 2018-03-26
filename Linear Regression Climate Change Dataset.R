@@ -1,6 +1,7 @@
 setwd("D:\\Study  Materials\\R Language\\DataSet")
 
 climate_change=read.csv("climate_change.csv")
+climate_change$rowid=runif(308)
 
 str(climate_change)
 summary(climate_change)
