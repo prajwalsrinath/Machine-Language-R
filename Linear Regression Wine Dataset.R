@@ -104,9 +104,10 @@ SST=sum((wine_Test$Price-mean(wine_train$Price))^2)
 #Adjusted R-squared
 1-(SSE/SST)
 
-#R² = 1 - SSE/SST,
+#RÂ² = 1 - SSE/SST,
 #where SST is calculated using the average value of the dependent variable on the training set.
 #Since SSE and SST are the sums of squared terms, we know that both will be positive.
 #Thus SSE/SST must be greater than or equal to zero. 
-#This means it is not possible to have an out-of-sample R² value of 2.4.
-#However, all other values are valid (even the negative ones!), since SSE can be more or less than SST, due to the fact that this is an out-of-sample R², not a model R².
+#This means it is not possible to have an out-of-sample RÂ² value of 2.4.
+#However, all other values are valid (even the negative ones!), since SSE can be more or less than SST, due to the fact that this is 
+#an out-of-sample RÂ², not a model RÂ².
