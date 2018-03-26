@@ -33,6 +33,15 @@ sum((climate_change$Temp--pred)^2)
 colnames(climate_change)[colnames(climate_change)=="CFC-12"]="CFC_12"
 colnames(climate_change)[colnames(climate_change)=="CFC-11"]="CFC_11"
 
+#plot Histogram for all Independent variable
+
+hist(climate_change$CO2)
+hist(climate_change$N2O)
+hist(climate_change$Aerosols)
+hist(climate_change$CFC_12)
+
+chisq.test(climate_change$Temp,climate_change$CO2)
+
 climate_linreg=lm(Temp~CO2+N2O+Aerosols+CFC_12,data=climate_change)
 summary(climate_linreg)
 
