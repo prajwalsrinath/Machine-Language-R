@@ -21,4 +21,12 @@ pred=mean(climate_change$Temp)
 #SST/TSS
 sum((climate_change$Temp--pred)^2)
 
+#build a linear regression model to predict the dependent variable Temp, using CO2, N2O, 
+#CFC.12, and Aerosols as independent variables
+colnames(climate_change)[colnames(climate_change)=="CFC-12"]="CFC_12"
+colnames(climate_change)[colnames(climate_change)=="CFC-11"]="CFC_11"
+
+climate_linreg=lm(Temp~CO2+N2O+Aerosols+CFC_12,data=climate_change)
+summary(climate_linreg)
+
 
