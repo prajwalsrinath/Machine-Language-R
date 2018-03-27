@@ -75,4 +75,8 @@ length(which(climate_change$CFC.12 > Q3_CFC.12+(1.5*IQR_CFC.12)
 climate_linreg=lm(Temp~CO2+N2O+Aerosols+CFC.12,data=climate_change)
 summary(climate_linreg)
 
+test_Data_Temp=climate_change_test$Temp-predcition
+SSE=(sum(test_Data_Temp)^2)
+R2=1-(SSE/TSS)
+R2
 
