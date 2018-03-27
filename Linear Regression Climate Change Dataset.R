@@ -87,6 +87,8 @@ summary(climate_linreg)
 #Adjusted R2 increased and R2 decreased
 #Observe the change closely. Does this validate the definition of R2 & Adj R2?
 
+#Find the RMSE, SSE and MAPE for the above Model. 
+
 test_Data_Temp=climate_change_test$Temp-predcition
 SSE=(sum(test_Data_Temp)^2)
 R2=1-(SSE/TSS)
