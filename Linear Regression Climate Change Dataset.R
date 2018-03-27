@@ -75,8 +75,23 @@ length(which(climate_change$CFC.12 > Q3_CFC.12+(1.5*IQR_CFC.12)
 climate_linreg=lm(Temp~CO2+N2O+Aerosols+CFC.12,data=climate_change)
 summary(climate_linreg)
 
+#Which variables are significant in the model? 
+CO2,Aerosols,CFC.12
+
+#Remove the insignificant variable and re run the model. What effect did it have on R2 and Adjusted R2? 
+
+climate_linreg=lm(Temp~CO2+N2O+Aerosols+CFC.12,data=climate_change_train)
+summary(climate_linreg)
+
+#What effect did it have on R2 and Adjusted R2?
+#Adjusted R2 increased and R2 decreased
+#Observe the change closely. Does this validate the definition of R2 & Adj R2?
+
 test_Data_Temp=climate_change_test$Temp-predcition
 SSE=(sum(test_Data_Temp)^2)
 R2=1-(SSE/TSS)
 R2
 
+#What is the NULL hypothesis in case of the variable Aerosols? 
+#Aerosols does not influence Temp ie B=0(H0),alternate Hypothesis B!=0
+#if we observe the P value it is leass than 5% so we reject the Null Hypothesis.
