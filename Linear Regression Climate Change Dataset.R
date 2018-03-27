@@ -10,6 +10,7 @@ summary(climate_change)
 #Check if any NA Exists
 sum(is.na(climate_change))
 
+set.seed(400)
 climate_change_train=subset(climate_change,rowid<=0.7)
 climate_change_test=subset(climate_change,rowid>0.7)
 
@@ -33,8 +34,6 @@ sum((climate_change$Temp-pred)^2)
 #CFC.12, and Aerosols as independent variables
 colnames(climate_change)[colnames(climate_change)=="CFC.12"]="CFC_12"
 colnames(climate_change)[colnames(climate_change)=="CFC.11"]="CFC_11"
-
-#plot Histogram for all Independent variable
 
 #plot Histogram for all Independent variable
 
@@ -80,17 +79,25 @@ CO2,Aerosols,CFC.12
 
 #Remove the insignificant variable and re run the model. What effect did it have on R2 and Adjusted R2? 
 
-climate_linreg=lm(Temp~CO2+N2O+Aerosols+CFC.12,data=climate_change_train)
-summary(climate_linreg)
+climate_linreg_T=lm(Temp~CO2+N2O+Aerosols+CFC.12,data=climate_change_train)
+summary(climate_linreg_T)
 
 #What effect did it have on R2 and Adjusted R2?
 #Adjusted R2 increased and R2 decreased
 #Observe the change closely. Does this validate the definition of R2 & Adj R2?
 
+climate_linreg=lm(Temp~CO2+N2O+Aerosols+CFC.12,data=climate_change)
+summary(climate_linreg)
+
+climate_linreg_T=lm(Temp~CO2+Aerosols+CFC.12,data=climate_change_train)
+summary(climate_linreg_T)
+
+prediction=predict(climate_linreg_T,newdata=climate_change_test)
+
 #Find the RMSE, SSE and MAPE for the above Model. 
 
-test_Data_Temp=climate_change_test$Temp-predcition
-SSE=(sum(test_Data_Temp)^2)
+Test_Data_Temp=climate_change_test$Temp-predcition
+SSE=(sum(Test_Data_Temp)^2)
 R2=1-(SSE/TSS)
 R2
 
