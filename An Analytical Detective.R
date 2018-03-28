@@ -63,5 +63,11 @@ Top5=subset(Detective_Analysis,Detective_Analysis$LocationDescription%in%TopLoca
 #How many observations are in Top5?
 nrow(Top5)
 
+#One of the locations has a much higher arrest rate than the other locations
+table(Top5$LocationDescription,Top5$Arrest)
+
 #On which day of the week do the most motor vehicle thefts at gas stations happen?
+table(Top5$LocationDescription,Top5$Weekday)
+
+#On which day of the week do the fewest motor vehicle thefts in residential driveways happen?
 table(Top5$LocationDescription,Top5$Weekday)
