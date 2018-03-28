@@ -75,7 +75,7 @@ table(limited_IPS$Info.On.Internet) #105
 
 #What proportion of interviewees who answered the Worry.About.Info question worry about 
 #how much information is available about them on the Internet? 
-
+prop.table(table(limited_IPS$Worry.About.Info))
 table(limited_IPS$Worry.About.Info)
 386/(386+404)
 
