@@ -53,6 +53,7 @@ hist(Detective_Analysis$DateConvert,breaks=100)
 #Create a boxplot of the variable "Date", sorted by the variable "Arrest" 
 boxplot(Detective_Analysis$DateConvert ~ Detective_Analysis$Arrest)
 #First Half
+boxplot(crime_test$DateConvert,ylab="Arrest",xlab="DateConvert")
 
 #For what proportion of motor vehicle thefts in 2001 was an arrest made?
 table(Detective_Analysis$Arrest,Detective_Analysis$Year)
