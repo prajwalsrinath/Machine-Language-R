@@ -26,9 +26,11 @@ cor(subset(climate_change, select = c(-Year,-Month)))
 
 #What will be the prediction of a baseline Model? 
 pred=mean(climate_change$Temp)
+pred_train=mean(climate_change_train$Temp)
 
 #SST/TSS
 sum((climate_change$Temp-pred)^2)
+sum((climate_change_train$Temp-pred_train)^2)
 
 #build a linear regression model to predict the dependent variable Temp, using CO2, N2O, 
 #CFC.12, and Aerosols as independent variables
@@ -37,36 +39,36 @@ colnames(climate_change)[colnames(climate_change)=="CFC.11"]="CFC_11"
 
 #plot Histogram for all Independent variable
 
-hist(climate_change$CO2)
-hist(climate_change$N2O)
-hist(climate_change$Aerosols)
-hist(climate_change$CFC.12)
+hist(climate_change_train$CO2)
+hist(climate_change_train$N2O)
+hist(climate_change_train$Aerosols)
+hist(climate_change_train$CFC.12)
 
-boxplot(climate_change$CO2)
-boxplot(climate_change$N2O)
-boxplot(climate_change$Aerosols,horizontal=T)
-boxplot(climate_change$CFC.12)
+boxplot(climate_change_train$CO2)
+boxplot(climate_change_train$N2O)
+boxplot(climate_change_train$Aerosols,horizontal=T)
+boxplot(climate_change_train$CFC.12)
 
 
-Q1_Aerosol=quantile(climate_change$Aerosols,0.25)
-Q2_Aerosol=quantile(climate_change$Aerosols,0.50)
-Q3_Aerosol=quantile(climate_change$Aerosols,0.75)
+Q1_Aerosol=quantile(climate_change_train$Aerosols,0.25)
+Q2_Aerosol=quantile(climate_change_train$Aerosols,0.50)
+Q3_Aerosol=quantile(climate_change_train$Aerosols,0.75)
 IQR_Aerosol=Q3_Aerosol-Q1_Aerosol
 
-Q1_CFC.12=quantile(climate_change$CFC.12,0.25)
-Q2_CFC.12=quantile(climate_change$CFC.12,0.50)
-Q3_CFC.12=quantile(climate_change$CFC.12,0.75)
+Q1_CFC.12=quantile(climate_change_train$CFC.12,0.25)
+Q2_CFC.12=quantile(climate_change_train$CFC.12,0.50)
+Q3_CFC.12=quantile(climate_change_train$CFC.12,0.75)
 IQR_CFC.12=Q3_CFC.12-Q1_CFC.12
 
 #Check the outlier percentage
 
-length(which(climate_change$Aerosols > Q3_Aerosol+(1.5*IQR_Aerosol)
-| climate_change$Aerosols < Q1_Aerosol-(1.5*IQR_Aerosol)))/length(climate_change$Aerosols)
+length(which(climate_change_train$Aerosols > Q3_Aerosol+(1.5*IQR_Aerosol)
+| climate_change_train$Aerosols < Q1_Aerosol-(1.5*IQR_Aerosol)))/length(climate_change_train$Aerosols)
 
 #14%
 
-length(which(climate_change$CFC.12 > Q3_CFC.12+(1.5*IQR_CFC.12)
-             | climate_change$CFC.12 < Q1_CFC.12-(1.5*IQR_CFC.12)))/length(climate_change$Aerosols)
+length(which(climate_change_train$CFC.12 > Q3_CFC.12+(1.5*IQR_CFC.12)
+             | climate_change_train$CFC.12 < Q1_CFC.12-(1.5*IQR_CFC.12)))/length(climate_change_train$CFC.12)
 
 #5.5%
 #Both are Having outliers greater than 5%
