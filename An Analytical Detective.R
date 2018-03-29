@@ -39,6 +39,20 @@ table(Detective_Analysis$Weekday)
 #Which month has the largest number of motor vehicle thefts for which an arrest was made?
 table(Detective_Analysis$Month,Detective_Analysis$Arrest)
 
+hist(Detective_Analysis$DateConvert,breaks=100)
+
+#In general, does it look like crime increases or decreases from 2002 - 2012?
+#Decrease
+
+#In general, does it look like crime increases or decreases from 2005 - 2008?
+#Decrease
+
+#In general, does it look like crime increases or decreases from 2009 - 2011?
+#Increase
+
+#Create a boxplot of the variable "Date", sorted by the variable "Arrest" 
+boxplot(Detective_Analysis$Date)
+
 #For what proportion of motor vehicle thefts in 2001 was an arrest made?
 table(Detective_Analysis$Arrest,Detective_Analysis$Year)
 2152/(18517+2152)
